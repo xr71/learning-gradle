@@ -1,0 +1,21 @@
+allprojects {
+     apply plugin: 'java'
+}
+
+plugins {
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+version = '1.0.SNAPSHOT'
+
+project(':Repository') {}
+
+project(':Service') {
+    dependencies {
+        implementation project(':Repository')
+    }
+}
